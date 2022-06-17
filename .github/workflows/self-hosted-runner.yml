@@ -9,6 +9,9 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
       - name: Set the script to executable
-        run: chmod +x ./connect-to-internal-service.py
+        run: |
+          mkdir test 
+          mv ./connect-to-internal-service.py test/
+          chmod +x ./test/connect-to-internal-service.py
       - name: Run the script
-        run: ./connect-to-internal-service.py
+        run: ./test/connect-to-internal-service.py
