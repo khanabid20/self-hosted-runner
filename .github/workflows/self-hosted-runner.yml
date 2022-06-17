@@ -1,9 +1,10 @@
 name: Self Hosted Runner
 
-defaults:
-  run:
-    shell: bash
-    working-directory: ~/workflow/local/test
+# defaults:
+#   run:
+#     shell: bash
+#     working-directory: test
+
 on:
   workflow_dispatch:
 jobs:
@@ -13,9 +14,6 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
       - name: Set the script to executable
-        run: |
-          mkdir test 
-          mv ./connect-to-internal-service.py test/
-          chmod +x ./test/connect-to-internal-service.py
+        run: chmod +x connect-to-internal-service.py
       - name: Run the script
-        run: ./test/connect-to-internal-service.py
+        run: ./connect-to-internal-service.py
