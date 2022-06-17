@@ -3,7 +3,7 @@ name: Self Hosted Runner
 defaults:
   run:
     shell: bash
-    working-directory: test
+    working-directory: ~/workflow/local/test
 on:
   workflow_dispatch:
 jobs:
