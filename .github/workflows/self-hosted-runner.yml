@@ -1,5 +1,9 @@
 name: Self Hosted Runner
 
+defaults:
+  run:
+    shell: bash
+    working-directory: test
 on:
   workflow_dispatch:
 jobs:
